@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# Redirect non-www to www
+RewriteCond %{HTTP_HOST} ^bidtrack\.xyz$ [NC]
+RewriteRule ^(.*)$ https://www.bidtrack.xyz/$1 [L,R=301]
+
+# Redirect http to https
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [L,R=301]

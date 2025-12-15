@@ -1,0 +1,5 @@
+RewriteEngine On
+
+# Force www
+RewriteCond %{HTTP_HOST} !^www\.bidtrack\.xyz$ [NC]
+RewriteRule ^(.*)$ http://www.bidtrack/$1 [L,R=301]

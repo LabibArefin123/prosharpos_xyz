@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://bidtrack.xyz/sitemap.xml

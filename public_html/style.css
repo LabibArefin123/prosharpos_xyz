@@ -1,0 +1,227 @@
+.error {
+  color: #dc3545;
+  font-size: 0.875em;
+  margin-top: 0.25rem;
+}
+
+.success {
+  color: #28a745;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+body {
+  background: #f9fafb;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 1rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ‣ Sticky Header */
+#header.sticky-top {
+  top: 0;
+  z-index: 1030;
+}
+
+/* ‣ Navbar separator style */
+.navbar-nav .separator {
+  opacity: 0.3;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ‣ Navbar links */
+.navbar-nav .nav-link {
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: 0.5px;
+  text-transform: capitalize;
+  color: #333 !important;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  padding: 0.5rem 0.75rem;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+  color: #0d6efd !important;
+  background-color: rgba(13, 110, 253, 0.05);
+  border-radius: 4px;
+}
+
+.navbar-nav .nav-link.active {
+  color: #0d6efd !important;
+  font-weight: 700;
+  border-bottom: 2px solid #0d6efd;
+}
+
+/* ‣ Buttons */
+button.btn-primary {
+  font-weight: 600;
+  padding: 0.75rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgb(13 110 253 / 0.3);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button.btn-primary:hover {
+  background-color: #0b5ed7;
+  box-shadow: 0 6px 20px rgb(11 94 215 / 0.5);
+}
+
+/* ‣ Banner (Slider) */
+.carousel-item {
+  height: 480px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.carousel-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0.8)
+  );
+  z-index: 1;
+}
+
+.carousel-caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  text-align: center;
+  bottom: auto !important;
+  padding: 0 1rem;
+}
+
+.banner-caption-bg {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  max-width: 90%;
+  width: 800px;
+  margin: 0 auto;
+}
+
+.carousel-indicators [data-bs-target] {
+  background-color: #0d6efd;
+}
+
+/* ‣ Responsive Styles */
+@media (max-width: 768px) {
+  #banner .carousel-item {
+    height: 45vh;
+  }
+
+  .carousel-caption {
+    top: 25% !important;
+    padding: 0 10px;
+  }
+
+  .carousel-caption h1 {
+    font-size: 1.5rem;
+    line-height: 1.2;
+  }
+
+  .carousel-caption p {
+    font-size: 1rem;
+  }
+
+  .banner-caption-bg {
+    padding: 8px 14px;
+    border-radius: 6px;
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .carousel-indicators {
+    bottom: 10px;
+  }
+}
+
+/* ‣ About Section */
+section#about {
+  background: #fff;
+  width: 100%;
+  padding: 2.5rem 2rem 3rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 0.1);
+}
+
+#about a:hover {
+  color: #ff9900 !important;
+  text-decoration: underline;
+}
+
+/* ‣ Feature Section */
+section#feature {
+  background: #fff;
+  width: 100%;
+  padding: 2.5rem 2rem 3rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 0.1);
+}
+
+.feature-card {
+  padding: 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  height: 100%;
+  /* ‣ No fixed height */
+}
+
+.feature-card:hover {
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.5);
+  transform: translateY(-5px) scale(1.05);
+}
+
+/* ‣ Contact Section */
+section#contact {
+  background: #fff;
+  width: 100%;
+  padding: 2.5rem 4rem 3rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 0.1);
+}
+
+section#contact h2 {
+  font-weight: 700;
+  color: #0d6efd;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* ‣ Input Focus Style */
+.form-control:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 0.25);
+}
+
+/* ‣ Alerts */
+.alert {
+  margin-bottom: 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  font-size: 1rem;
+}
