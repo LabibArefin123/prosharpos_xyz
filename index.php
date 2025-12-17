@@ -131,78 +131,79 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 // Load countries from JSON
 $countries = file_exists('countries.json') ? json_decode(file_get_contents('countries.json'), true) : [];
-
-// Default slides (optional)
+// Default slides (ProsharPOS)
 $slides = [
     [
         'image' => 'images/slider/slide1.jpg',
-        'title' => 'Welcome to BidTrack',
-        'subtitle' => 'Streamline Tender Management with Confidence'
+        'title' => 'Welcome to ProsharPOS',
+        'subtitle' => 'Smart Point of Sale Software for Bangladesh'
     ],
     [
         'image' => 'images/slider/slide2.jpg',
-        'title' => 'Manage Tender',
-        'subtitle' => 'Simplify the Entire Tender Process'
+        'title' => 'Sales & Inventory Management',
+        'subtitle' => 'Track Sales, Stock, and Profit in Real Time'
     ],
     [
         'image' => 'images/slider/slide3.jpg',
-        'title' => 'Live Dashboard',
-        'subtitle' => 'Get Real-Time Insights & Track Every Activity'
+        'title' => 'Powerful Business Dashboard',
+        'subtitle' => 'Manage Your Shop with Confidence & Control'
     ]
 ];
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8" />
-    <title>BidTrack – Your Tender Management Partner</title>
+    <title>ProsharPOS – Smart POS Software for Bangladesh</title>
 
     <!-- Primary Meta Tags -->
-    <meta name="description" content="BidTrack – Smart tender tracking software designed for efficient tender participation and project management. Boost your success with BidTrack.">
-    <meta name="keywords" content="bidtrack, tender tracking, tender management, e-tender software, tender dashboard, bidding software, tender software bangladesh">
-    <meta name="author" content="BidTrack Team">
+    <meta name="description" content="ProsharPOS is a smart Point of Sale (POS) software for Bangladesh. Manage sales, inventory, customers, suppliers, and reports easily with ProsharPOS.">
+    <meta name="keywords" content="prosharpos, pos software bangladesh, retail pos system, shop management software, inventory management bangladesh, sales billing software, pos system">
+    <meta name="author" content="ProsharPOS Team">
     <meta name="robots" content="index, follow">
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://www.bidtrack.xyz/" />
+    <!-- <link rel="canonical" href="https://www.prosharpos.xyz/" /> -->
 
     <!-- Open Graph (Facebook, LinkedIn) -->
-    <meta property="og:title" content="BidTrack – Smart Tender Management Software">
-    <meta property="og:description" content="Simplify and manage your tender participation workflow with BidTrack.">
-    <meta property="og:image" content="https://www.bidtrack.xyz/images/seo-banner.jpg">
-    <meta property="og:url" content="https://www.bidtrack.xyz/">
+    <meta property="og:title" content="ProsharPOS – Smart POS Software for Bangladesh">
+    <meta property="og:description" content="Simplify sales, inventory, and business management with ProsharPOS – a modern POS solution built for Bangladeshi businesses.">
+    <!-- <meta property="og:image" content="https://www.prosharpos.xyz/images/seo-banner.jpg"> -->
+    <!-- <meta property="og:url" content="https://www.prosharpos.xyz/"> -->
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="BidTrack">
+    <meta property="og:site_name" content="ProsharPOS">
     <meta property="og:updated_time" content="2025-07-31T12:00:00+00:00">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="BidTrack – Your Tender Management Partner">
-    <meta name="twitter:description" content="Track tenders, manage participation, and win bids with BidTrack.">
-    <meta name="twitter:image" content="https://www.bidtrack.xyz/images/seo-banner.jpg">
+    <meta name="twitter:title" content="ProsharPOS – POS Software for Bangladesh">
+    <meta name="twitter:description" content="Fast billing, real-time inventory, and powerful reports with ProsharPOS.">
+    <!-- <meta name="twitter:image" content="https://www.prosharpos.xyz/images/seo-banner.jpg"> -->
 
     <!-- JSON-LD Structured Data (SoftwareApplication Schema) -->
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
             "@type": "SoftwareApplication",
-            "name": "BidTrack",
-            "url": "https://www.bidtrack.xyz/",
-            "image": "https://www.bidtrack.xyz/images/seo-banner.jpg",
-            "description": "BidTrack – Smart tender tracking software designed for efficient tender participation and project management.",
+            "name": "ProsharPOS",
+            "url": "https://www.prosharpos.xyz/",
+            "image": "https://www.prosharpos.xyz/images/seo-banner.jpg",
+            "description": "ProsharPOS is a smart web-based Point of Sale (POS) software for managing sales, inventory, customers, and business reports in Bangladesh.",
             "applicationCategory": "BusinessApplication",
             "operatingSystem": "Web",
             "author": {
                 "@type": "Organization",
-                "name": "BidTrack Team"
+                "name": "ProsharPOS Team"
             }
         }
     </script>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="https://www.bidtrack.xyz/images/icon.png">
+    <!-- <link rel="icon" type="image/png" src="images/icon.JPG"> -->
+    <link rel="icon" type="image/png" href="images/icon.JPG">
 
     <!-- Bootstrap & Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" crossorigin="anonymous">
@@ -210,8 +211,10 @@ $slides = [
 
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="./style.css">
-    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://bidtrack.xyz/sitemap.xml">
-    <link rel="alternate" type="application/rss+xml" title="RSS" href="https://bidtrack.xyz/feed.xml">
+
+    <!-- SEO Extras -->
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://www.prosharpos.xyz/sitemap.xml">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="https://www.prosharpos.xyz/feed.xml">
     <link rel="robots" href="/robots.txt">
 </head>
 
@@ -232,24 +235,20 @@ $slides = [
             <div
                 class="top-bar d-flex justify-content-between align-items-center bg-opacity-25 border-bottom border-secondary py-2 px-3 mb-1 small text-secondary">
                 <div class="d-flex gap-3">
-                    <a href="mailto:bidtrack@totalofftec.com"
+                    <a href="mailto:mdlabibarefin@gmail.com"
                         class="text-decoration-none text-secondary d-flex align-items-center gap-1">
-                        <i class="bi bi-envelope"></i> <span class="d-none d-sm-inline">bidtrack@totalofftec.com</span>
+                        <i class="bi bi-envelope"></i> <span class="d-none d-sm-inline">mdlabibarefin@gmail.com</span>
                     </a>
-                    <a href="tel:+8809643111222"
+                    <a href="tel:+8801776197999"
                         class="text-decoration-none text-secondary d-flex align-items-center gap-1">
-                        <i class="bi bi-telephone"></i> <span class="d-none d-sm-inline">+8809643111222</span>
+                        <i class="bi bi-telephone"></i> <span class="d-none d-sm-inline">+8801776197999</span>
                     </a>
-                    <a href="https://totalofftec.com" target="_blank"
+                    <a href="https://labib.work" target="_blank"
                         class="text-decoration-none text-secondary d-flex align-items-center gap-1">
-                        <i class="bi bi-globe2"></i> <span class="d-none d-sm-inline">totalofftec.com</span>
-                    </a>
-                    <a href="https://maps.app.goo.gl/JGxPSh5HZnbuUK6H7" target="_blank"
-                        class="text-decoration-none text-secondary d-flex align-items-center gap-1">
-                        <i class="bi bi-geo-alt"></i> <span class="d-none d-sm-inline">Location</span>
+                        <i class="bi bi-globe2"></i> <span class="d-none d-sm-inline">labib.work</span>
                     </a>
                 </div>
-                <a href="mailto:timetrack@totalofftec.com"
+                <a href="mailto:mdlabibarefin@gmail.com"
                     class="btn btn-primary btn-sm rounded-circle d-flex align-items-center justify-content-center"
                     style="width: 36px; height: 36px;">
                     <i class="bi bi-envelope-fill"></i>
@@ -260,7 +259,7 @@ $slides = [
             <nav class="navbar navbar-expand-md navbar-light bg-white border-bottom shadow-sm mb-4 px-2">
                 <div class="container-fluid px-0">
                     <a class="navbar-brand d-flex align-items-center gap-2" href="index.php">
-                        <img src="images/logo.png" alt="Logo" class="d-none d-md-block" style="width: 200px; height: 6  0px;">
+                        <img src="images/image.png" alt="Logo" class="d-none d-md-block" style="width: 200px; height: 6  0px;">
                         <!-- <span class="text-primary fw-bold fs-4">BidTrack</span> -->
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
@@ -331,63 +330,77 @@ $slides = [
             <div class="text-center mb-5">
                 <h1 class="text-center fw-bold display-6">
                     About
-                    <span class="text-bidtrack-blue">Bid</span><span class="text-bidtrack-green">Track</span>
+                    <span class="text-proshar-blue">Proshar</span><span class="text-proshar-green">POS</span>
                 </h1>
-                <p class="fs-5 text-primary fst-italic">Your Centralized Platform for Smarter Tender Management</p>
+                <p class="fs-5 text-primary fst-italic">
+                    Smart Point of Sale Software for Bangladesh
+                </p>
             </div>
 
             <div class="text-secondary fs-6 lh-lg mx-auto" style="max-width: 1140px; padding: 0 1rem; text-align: justify;">
                 <p>
-                    <span class="fw-bold bidtrack-hover">BidTrack</span> is a powerful, web-based solution built for professionals navigating complex procurement landscapes. By seamlessly unifying bid tracking, <strong>document management, team collaboration, and evaluation</strong>, it empowers smarter decisions and drives greater success for Bidders.
-
-                    With smart analytics, deadline tracking, and a seamless user experience, <span class="fw-bold bidtrack-hover">BidTrack</span> transforms bidding into your ultimate strategic advantage.
+                    <span class="fw-bold proshar-hover">ProsharPOS</span> is a modern, web-based Point of Sale (POS) solution designed to simplify
+                    <strong>sales, inventory, and business management</strong> for shops and businesses across Bangladesh.
+                    It helps retailers manage daily operations efficiently with accuracy and confidence.
                 </p>
 
-                <h3 class="fw-semibold text-primary my-4">Bid Smarter, Move Faster.</h3>
+                <p>
+                    From fast billing and stock control to customer and supplier management,
+                    <span class="fw-bold proshar-hover">ProsharPOS</span> provides a complete business solution in one place.
+                    Its intuitive interface ensures ease of use for both owners and staff.
+                </p>
 
-                <p>BidTrack offers:</p>
-                <ul class="list-unstyled fs-6 mb-4" style="max-width: 350px;">
-                    <li>✅ <strong>Real-Time Collaboration</strong></li>
-                    <li>✅ <strong>Smart Ranking Analytics</strong></li>
-                    <li>✅ <strong>Automated Reporting</strong></li>
-                    <li>✅ <strong>Full Visibility &amp; Control</strong></li>
+                <h3 class="fw-semibold text-primary my-4">Sell Faster. Manage Smarter.</h3>
+
+                <p>ProsharPOS offers:</p>
+                <ul class="list-unstyled fs-6 mb-4" style="max-width: 420px;">
+                    <li>✅ <strong>Fast & Accurate Sales Billing</strong></li>
+                    <li>✅ <strong>Real-Time Inventory Tracking</strong></li>
+                    <li>✅ <strong>Profit, Sales & Expense Reports</strong></li>
+                    <li>✅ <strong>Customer & Supplier Management</strong></li>
+                    <li>✅ <strong>User Roles & Secure Access Control</strong></li>
                 </ul>
 
                 <p>
-                    Take control of your bids and <strong>improve your win rates</strong> — <span class="fw-bold bidtrack-hover">BidTrack</span> makes it simple.
+                    Take full control of your shop and <strong>grow your business efficiently</strong> —
+                    <span class="fw-bold proshar-hover">ProsharPOS</span> makes daily operations simple and reliable.
                     <br><br>
-                    <em class="fw-semibold fs-5 text-dark">Track. Manage. Win. With <span class="bidtrack-hover">BidTrack</span>.</em>
+                    <em class="fw-semibold fs-5 text-dark">
+                        Sell. Track. Grow. With <span class="proshar-hover">ProsharPOS</span>.
+                    </em>
                 </p>
 
                 <p>
-                    From offer submission and financial documentation to cross-departmental collaboration, <span class="bidtrack-hover">BidTrack</span> provides complete visibility, operational control, and actionable insights at every stage. Its dynamic features empower organizations to stay competitive and agile in fast-paced bidding environments.
+                    Whether you run a grocery store, pharmacy, electronics shop, or retail outlet,
+                    <span class="proshar-hover">ProsharPOS</span> adapts to your business needs with powerful features,
+                    clear insights, and smooth performance.
                 </p>
 
                 <p class="fw-semibold text-dark mt-4">
-                    Trusted by procurement-driven enterprises, <span class="bidtrack-hover">BidTrack</span> enables smarter bid strategies, reduces operational risks, and enhances win rates through a seamless and intelligent digital experience.
+                    Built for Bangladeshi businesses,
+                    <span class="proshar-hover">ProsharPOS</span> helps reduce manual work,
+                    minimize errors, and improve overall profitability through a smart digital POS system.
                 </p>
             </div>
         </section>
 
         <style>
-            .text-bidtrack-blue {
+            .text-proshar-blue {
                 color: #16a5b1ff;
             }
 
-            .text-bidtrack-green {
+            .text-proshar-green {
                 color: #00B894;
             }
 
-            .bidtrack-hover {
+            .proshar-hover {
                 color: #212529;
-                /* normal text color */
                 transition: color 0.3s ease;
                 cursor: default;
             }
 
-            .bidtrack-hover:hover {
+            .proshar-hover:hover {
                 color: #2C7BE5;
-                /* About's blue color on hover */
             }
         </style>
 
@@ -397,7 +410,7 @@ $slides = [
         <section id="feature" class="bg-white py-5 px-3 px-md-5">
             <div class="container">
                 <h2 class="text-center fw-bold mb-5 display-6 text-dark">
-                    BidTrack Core Features
+                    ProsharPOS Core Features
                 </h2>
 
                 <div class="row g-4 justify-content-center">
@@ -406,11 +419,11 @@ $slides = [
                     <div class="col-6 col-md-6 col-lg-4">
                         <div class="bg-info bg-opacity-10 shadow-sm p-4 rounded-4 h-100 text-center">
                             <div class="mb-3">
-                                <i class="fas fa-tachometer-alt text-info fs-1"></i>
+                                <i class="fas fa-cash-register text-info fs-1"></i>
                             </div>
-                            <h3 class="h5 fw-semibold mb-3 text-dark">Speedy Process</h3>
+                            <h3 class="h5 fw-semibold mb-3 text-dark">Fast Billing</h3>
                             <p class="text-secondary small">
-                                Our intelligent algorithms allow you to complete bidding evaluations in just minutes with utmost accuracy.
+                                Complete sales in seconds with a fast, smooth, and accurate billing system designed for busy shops.
                             </p>
                         </div>
                     </div>
@@ -419,11 +432,11 @@ $slides = [
                     <div class="col-6 col-md-6 col-lg-4">
                         <div class="bg-primary bg-opacity-10 shadow-sm p-4 rounded-4 h-100 text-center">
                             <div class="mb-3">
-                                <i class="fas fa-shield-alt text-primary fs-1"></i>
+                                <i class="fas fa-boxes text-primary fs-1"></i>
                             </div>
-                            <h3 class="h5 fw-semibold mb-3 text-dark">Secure</h3>
+                            <h3 class="h5 fw-semibold mb-3 text-dark">Inventory Management</h3>
                             <p class="text-secondary small">
-                                All your tender documents are encrypted with military-grade protection, ensuring privacy and security.
+                                Track stock levels in real time, prevent shortages, and manage products with full control.
                             </p>
                         </div>
                     </div>
@@ -434,9 +447,9 @@ $slides = [
                             <div class="mb-3">
                                 <i class="fas fa-users text-success fs-1"></i>
                             </div>
-                            <h3 class="h5 fw-semibold mb-3 text-dark">Team Collaboration</h3>
+                            <h3 class="h5 fw-semibold mb-3 text-dark">Customer & Supplier Management</h3>
                             <p class="text-secondary small">
-                                Enable real-time collaboration with your evaluation team — from anywhere, anytime.
+                                Manage customer history, due balances, and supplier records in one organized system.
                             </p>
                         </div>
                     </div>
@@ -447,9 +460,9 @@ $slides = [
                             <div class="mb-3">
                                 <i class="fas fa-chart-line text-danger fs-1"></i>
                             </div>
-                            <h3 class="h5 fw-semibold mb-3 text-dark">Real-time Analytics</h3>
+                            <h3 class="h5 fw-semibold mb-3 text-dark">Sales & Profit Reports</h3>
                             <p class="text-secondary small">
-                                Monitor evaluation metrics live with detailed dashboards and customizable reports.
+                                View daily, monthly, and yearly reports with clear insights into sales, profit, and expenses.
                             </p>
                         </div>
                     </div>
@@ -458,11 +471,11 @@ $slides = [
                     <div class="col-6 col-md-6 col-lg-4">
                         <div class="bg-warning bg-opacity-10 shadow-sm p-4 rounded-4 h-100 text-center">
                             <div class="mb-3">
-                                <i class="fas fa-cogs text-warning fs-1"></i>
+                                <i class="fas fa-user-shield text-warning fs-1"></i>
                             </div>
-                            <h3 class="h5 fw-semibold mb-3 text-dark">Customization</h3>
+                            <h3 class="h5 fw-semibold mb-3 text-dark">User Roles & Security</h3>
                             <p class="text-secondary small">
-                                Tailor the evaluation templates and workflow to perfectly fit your organization's needs.
+                                Control access with secure user roles to protect sensitive business data.
                             </p>
                         </div>
                     </div>
@@ -473,9 +486,9 @@ $slides = [
                             <div class="mb-3">
                                 <i class="fas fa-headset fs-1" style="color: #6610f2;"></i>
                             </div>
-                            <h3 class="h5 fw-semibold mb-3 text-dark">24/7 Support</h3>
+                            <h3 class="h5 fw-semibold mb-3 text-dark">Reliable Support</h3>
                             <p class="text-secondary small">
-                                Our support team is always available to assist you at every stage of your tender evaluation journey.
+                                Get timely support and guidance to keep your business running smoothly without interruptions.
                             </p>
                         </div>
                     </div>
@@ -484,17 +497,17 @@ $slides = [
             </div>
         </section>
 
-
         <br>
 
-        <!-- Hardware / More Insights Section -->
+        <!-- Software Insights Section -->
         <section id="hardware" class="bg-white py-5 px-3 px-md-5">
-            <h2 class="text-center fw-bold mb-2 display-6 text-dark">More Insights</h2>
+            <h2 class="text-center fw-bold mb-2 display-6 text-dark">ProsharPOS Modules</h2>
             <p class="text-center text-muted mb-5 fs-6">
-                Explore the modules that drive your bidding success.
+                Explore the powerful modules that run your daily business operations.
             </p>
 
             <div class="row g-5">
+
                 <!-- Dashboard -->
                 <div class="col-md-6">
                     <div class="card border-0 shadow-lg h-100 overflow-hidden rounded-4">
@@ -508,122 +521,110 @@ $slides = [
                         <div class="card-body text-center px-4 py-3">
                             <h5 class="card-title fw-semibold text-dark">Dashboard</h5>
                             <p class="card-text text-secondary text-justify">
-                                Get a real-time overview of all tenders—track submissions, status updates, deadlines, and performance insights from one centralized dashboard.
+                                Get a real-time overview of sales, stock levels, invoices, challans, payments, and financial summaries from one centralized dashboard.
                             </p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Tender Listings -->
+                <!-- Invoice Management -->
                 <div class="col-md-6">
                     <div class="card border-0 shadow-lg h-100 overflow-hidden rounded-4">
                         <div class="card-img-hover bg-white d-flex align-items-center justify-content-center p-3" style="height: 240px;">
-                            <img src="images/software/tender_list.PNG" alt="Tender Listings"
+                            <img src="images/software/invoice.PNG" alt="Invoice Management"
                                 class="img-fluid" role="button"
                                 data-bs-toggle="modal" data-bs-target="#imageModal"
                                 onclick="setModalImage(this.src)"
                                 style="object-fit: contain; max-height: 100%; max-width: 100%;">
                         </div>
                         <div class="card-body text-center px-4 py-3">
-                            <h5 class="card-title fw-semibold text-dark">Tender Listings</h5>
+                            <h5 class="card-title fw-semibold text-dark">Invoice Management</h5>
                             <p class="card-text text-secondary text-justify">
-                                Browse and manage all available tenders with advanced filters—view categories, publishing entities, deadlines, and requirements with ease.
+                                Create, manage, and track sales invoices efficiently with customer details, payment status, and invoice history.
                             </p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Tender Participation -->
+                <!-- Challan Management -->
                 <div class="col-md-6">
                     <div class="card border-0 shadow-lg h-100 overflow-hidden rounded-4">
                         <div class="card-img-hover bg-white d-flex align-items-center justify-content-center p-3" style="height: 240px;">
-                            <img src="images/software/tender_participated.PNG" alt="Tender Participation"
+                            <img src="images/software/challan.PNG" alt="Challan Management"
                                 class="img-fluid" role="button"
                                 data-bs-toggle="modal" data-bs-target="#imageModal"
                                 onclick="setModalImage(this.src)"
                                 style="object-fit: contain; max-height: 100%; max-width: 100%;">
                         </div>
                         <div class="card-body text-center px-4 py-3">
-                            <h5 class="card-title fw-semibold text-dark">Tender Participation</h5>
+                            <h5 class="card-title fw-semibold text-dark">Challan Management</h5>
                             <p class="card-text text-secondary text-justify">
-                                Submit tenders directly through the system—upload documents, track status, get alerts for changes, and ensure compliance with digital logs.
+                                Generate delivery challans, track product movement, and maintain accurate records between stock and invoices.
                             </p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Awarded Tenders -->
+                <!-- Product & Stock -->
                 <div class="col-md-6">
                     <div class="card border-0 shadow-lg h-100 overflow-hidden rounded-4">
                         <div class="card-img-hover bg-white d-flex align-items-center justify-content-center p-3" style="height: 240px;">
-                            <img src="images/software/tender_awarded.PNG" alt="Awarded Tenders"
+                            <img src="images/software/products.PNG" alt="Product & Stock Management"
                                 class="img-fluid" role="button"
                                 data-bs-toggle="modal" data-bs-target="#imageModal"
                                 onclick="setModalImage(this.src)"
                                 style="object-fit: contain; max-height: 100%; max-width: 100%;">
                         </div>
                         <div class="card-body text-center px-4 py-3">
-                            <h5 class="card-title fw-semibold text-dark">Awarded Tenders</h5>
+                            <h5 class="card-title fw-semibold text-dark">Product & Stock Management</h5>
                             <p class="card-text text-secondary text-justify">
-                                View and manage awarded tenders—track delivery timelines, manage agreements, and keep records of contract execution securely in one place.
+                                Manage products, categories, brands, units, warranties, storage locations, and monitor stock availability in real time.
                             </p>
                         </div>
                     </div>
                 </div>
+
+                <!-- Financial Management -->
+                <div class="col-md-6">
+                    <div class="card border-0 shadow-lg h-100 overflow-hidden rounded-4">
+                        <div class="card-img-hover bg-white d-flex align-items-center justify-content-center p-3" style="height: 240px;">
+                            <img src="images/software/finance.PNG" alt="Financial Management"
+                                class="img-fluid" role="button"
+                                data-bs-toggle="modal" data-bs-target="#imageModal"
+                                onclick="setModalImage(this.src)"
+                                style="object-fit: contain; max-height: 100%; max-width: 100%;">
+                        </div>
+                        <div class="card-body text-center px-4 py-3">
+                            <h5 class="card-title fw-semibold text-dark">Financial Management</h5>
+                            <p class="card-text text-secondary text-justify">
+                                Track bank balances, deposits, withdrawals, petty cash, and payments with complete financial transparency.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- People & Settings -->
+                <div class="col-md-6">
+                    <div class="card border-0 shadow-lg h-100 overflow-hidden rounded-4">
+                        <div class="card-img-hover bg-white d-flex align-items-center justify-content-center p-3" style="height: 240px;">
+                            <img src="images/software/settings.PNG" alt="People & Settings"
+                                class="img-fluid" role="button"
+                                data-bs-toggle="modal" data-bs-target="#imageModal"
+                                onclick="setModalImage(this.src)"
+                                style="object-fit: contain; max-height: 100%; max-width: 100%;">
+                        </div>
+                        <div class="card-body text-center px-4 py-3">
+                            <h5 class="card-title fw-semibold text-dark">People & System Settings</h5>
+                            <p class="card-text text-secondary text-justify">
+                                Manage customers, suppliers, users, roles, permissions, and company profiles with secure access control.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-
-            <!-- Bootstrap Modal for Zoomed Image -->
-            <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-fullscreen"> <!-- fullscreen for all devices -->
-                    <div class="modal-content border-0" style="background-color: transparent; box-shadow: none;">
-
-                        <div class="modal-header border-0 p-2">
-                            <button type="button" class="btn-close btn-close-white ms-auto" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body p-0 d-flex justify-content-center align-items-center">
-                            <img id="modalImage"
-                                class="w-100 h-100"
-                                alt="Zoomed Image"
-                                style="object-fit: contain; touch-action: pinch-zoom; cursor: zoom-out;"
-                                onclick="document.querySelector('#imageModal .btn-close').click()">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Script to Set Modal Image -->
-            <script>
-                function setModalImage(src) {
-                    document.getElementById('modalImage').src = src;
-                }
-            </script>
-
-            <!-- Optional Styling -->
-            <style>
-                .card-img-hover img {
-                    transition: transform 0.4s ease;
-                }
-
-                .card-img-hover:hover img {
-                    transform: scale(1.05);
-                }
-
-                /* Remove border-radius and spacing on small and large devices */
-                #modalImage {
-                    border-radius: 0 !important;
-                }
-
-                .modal-body {
-                    padding: 0 !important;
-                }
-
-                /* Optional: Remove scrollbar flash from fullscreen modal */
-                .modal-content {
-                    overflow: hidden;
-                }
-            </style>
-
         </section>
+
         <br>
 
         <section class="py-5 bg-light" id="plan">
@@ -1001,57 +1002,6 @@ $slides = [
 
         <br>
 
-        <section id="about" class="bg-white py-5 px-3 px-md-4">
-            <style>
-                @font-face {
-                    font-family: 'OnStage';
-                    src: url('fonts/OnStage_Regular.ttf') format('truetype');
-                    font-weight: normal;
-                    font-style: normal;
-                }
-
-                .onstage-text {
-                    font-family: 'OnStage', sans-serif;
-                    color: #ff9900;
-                }
-
-                .off-highlight {
-                    color: #B2BEB5;
-                }
-            </style>
-
-            <div class="text-center mb-4">
-                <h2 class="text-center fw-bold display-6 text-dark">
-                    About
-                    <span class="onstage-text">
-                        total<span class="off-highlight">offtec</span>
-                    </span>
-                </h2>
-            </div>
-
-            <div class="text-justify text-secondary fs-6 lh-lg">
-                <p>
-                    <a href="https://totalofftec.com" target="_blank" rel="noopener noreferrer"
-                        class="fw-semibold text-dark text-decoration-none" style="transition: color 0.3s;">
-                        TOTALOFFTEC
-                    </a>,
-                    established in 2008, is committed to meeting each client's unique needs with fully integrated IT solutions.
-                    Backed by industry experience and a skilled team, we aim to be your trusted ICT partner.
-                    We are an ISO 9001:2015-certified company based in Dhaka, Bangladesh.
-                </p>
-                <p>
-                    <a href="https://totalofftec.com" target="_blank" rel="noopener noreferrer"
-                        class="fw-semibold text-dark text-decoration-none" style="transition: color 0.3s;">
-                        TOTALOFFTEC
-                    </a>
-                    delivers innovative office technology, premium tailor-made software, and automation systems
-                    to enhance workplace productivity and comfort. Our customised solutions empower businesses
-                    to optimise operations and foster a more efficient, creative environment.
-                </p>
-            </div>
-        </section>
-        <br>
-
         <section id="contact">
             <h2>Get in Touch</h2>
 
@@ -1155,18 +1105,18 @@ $slides = [
 
         <br>
 
-        <footer class="text-center text-muted small py-3 border-top">
+        <footer class="text-center text-muted small py-1 border-top">
             &copy;
-            <a href="https://bidtrack.xyz" target="_blank"
+            <a href="#"
                 class="text-decoration-none text-primary fw-semibold"
                 rel="noopener noreferrer">
-                BidTrack.
+                ProsharPOS.
             </a> All rights reserved
             | Design and Developed by
-            <a href="https://totalofftec.com" target="_blank" rel="noopener noreferrer"
+            <a href="https://labib.work" target="_blank" rel="noopener noreferrer"
                 class="text-decoration-none text-primary fw-semibold d-inline-block">
                 <span class="onstage-text">
-                    total<span class="off-highlight">offtec</span>
+                    Labib Arefin
                 </span>
             </a>
         </footer>
