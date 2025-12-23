@@ -131,24 +131,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 // Load countries from JSON
 $countries = file_exists('countries.json') ? json_decode(file_get_contents('countries.json'), true) : [];
-// Default slides (ProsharPOS)
-$slides = [
-    [
-        'image' => 'images/slider/slide1.jpg',
-        'title' => 'Welcome to ProsharPOS',
-        'subtitle' => 'Smart Point of Sale Software for Bangladesh'
-    ],
-    [
-        'image' => 'images/slider/slide2.jpg',
-        'title' => 'Sales & Inventory Management',
-        'subtitle' => 'Track Sales, Stock, and Profit in Real Time'
-    ],
-    [
-        'image' => 'images/slider/slide3.jpg',
-        'title' => 'Powerful Business Dashboard',
-        'subtitle' => 'Manage Your Shop with Confidence & Control'
-    ]
-];
+
 ?>
 
 
@@ -284,45 +267,84 @@ $slides = [
         </section>
 
         <!-- Banner -->
-        <section id="banner">
-            <div id="sliderCarousel" class="carousel slide rounded-4 shadow-lg" data-bs-ride="carousel"
-                data-bs-interval="8000">
-                <div class="carousel-inner">
+        <section class="proshar-hero">
+            <style>
+                .proshar-hero {
+                    padding: 100px 0;
+                    background: linear-gradient(120deg, #f6fff9, #f2edff);
+                }
 
-                    <?php foreach ($slides as $idx => $slide): ?>
-                        <div class="carousel-item <?php if ($idx === 0) echo 'active'; ?>"
-                            style="background-image: url('<?= htmlspecialchars($slide['image']) ?>');">
-                            <div class="carousel-gradient"></div>
-                            <div class="carousel-caption caption-overlay text-white text-center px-3">
-                                <h2 class="display-4 fw-bold"><?= htmlspecialchars($slide['title']) ?></h2>
-                                <p class="lead"><?= htmlspecialchars($slide['subtitle']) ?></p>
-                            </div>
-                        </div>
-                    <?php endforeach; ?>
-                </div>
+                .hero-badge {
+                    color: #3ad29f;
+                    font-weight: 600;
+                    font-size: 14px;
+                    display: inline-block;
+                    margin-bottom: 15px;
+                }
 
-                <!-- Controls -->
-                <button class="carousel-control-prev" type="button" data-bs-target="#sliderCarousel"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#sliderCarousel"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
+                .hero-title {
+                    font-size: 52px;
+                    font-weight: 800;
+                    color: #1f2933;
+                    line-height: 1.2;
+                    margin-bottom: 20px;
+                }
 
-                <!-- Indicators -->
-                <div class="carousel-indicators mt-3">
-                    <?php foreach ($slides as $idx => $_): ?>
-                        <button type="button" data-bs-target="#sliderCarousel" data-bs-slide-to="<?= $idx ?>"
-                            <?php if ($idx === 0) echo 'class="active" aria-current="true"'; ?>
-                            aria-label="Slide <?= $idx + 1 ?>"></button>
-                    <?php endforeach; ?>
+                .hero-text {
+                    font-size: 17px;
+                    color: #6b7280;
+                    max-width: 500px;
+                    margin-bottom: 30px;
+                }
+
+                .hero-btn {
+                    background-color: #6c7cff;
+                    color: #fff;
+                    padding: 14px 28px;
+                    border-radius: 8px;
+                    font-weight: 600;
+                    text-decoration: none;
+                }
+
+                .hero-btn:hover {
+                    background-color: #5a6af0;
+                    color: #fff;
+                }
+
+                .hero-image {
+                    max-width: 100%;
+                    height: auto;
+                }
+            </style>
+            <div class="container">
+                <div class="row align-items-center">
+
+                    <!-- Left Content -->
+                    <div class="col-lg-6 col-md-12">
+                        <span class="hero-badge">Bangladesh POS Software</span>
+
+                        <h1 class="hero-title">
+                            Easy-to-use<br>
+                            Point of Sale
+                        </h1>
+
+                        <p class="hero-text">
+                            ProsharPOS helps businesses in Bangladesh manage sales,
+                            inventory, customers, and reports easily.
+                            Fast, secure, and works on all devices.
+                        </p>
+                    </div>
+
+                    <!-- Right Illustration -->
+                    <div class="col-lg-6 col-md-12 text-center">
+                        <img src="images/hero/hero.png" alt="ProsharPOS Illustration" class="hero-image">
+                    </div>
+
                 </div>
             </div>
+
         </section>
+
         <br>
 
         <!-- About Section -->
@@ -624,381 +646,6 @@ $slides = [
 
             </div>
         </section>
-
-        <br>
-
-        <section class="py-5 bg-light" id="plan">
-            <style>
-                /* Section padding adjustment */
-                #plan {
-                    padding-top: 3rem;
-                    padding-bottom: 3rem;
-                }
-
-                /* Increase side space inside container */
-                #plan .container {
-                    max-width: 1200px;
-                    /* was default ~1140px on lg */
-                }
-
-                /* Make plan cards more roomy horizontally */
-                .plan-card {
-                    border: 1px solid #e0e0e0;
-                    border-radius: 10px;
-                    padding: 25px;
-                    background: #fff;
-                    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
-                    transition: transform 0.2s;
-                    height: 100%;
-                }
-
-                .plan-card:hover {
-                    transform: translateY(-5px);
-                }
-
-                .price-old {
-                    text-decoration: line-through;
-                    color: gray;
-                }
-
-                .price-new {
-                    font-size: 2rem;
-                    font-weight: bold;
-                }
-
-                .plan-btn {
-                    background-color: #198754;
-                    border: none;
-                    padding: 10px 0;
-                    font-size: 1rem;
-                    width: 100%;
-                }
-
-                .plan-features li {
-                    margin-bottom: 8px;
-                }
-
-                .plan-features i {
-                    color: #7d4dfe;
-                }
-
-                /* Mobile adjustments for section + cards */
-                @media (max-width: 767px) {
-                    #plan {
-                        padding-top: 1.5rem;
-                        padding-bottom: 1.5rem;
-                    }
-
-                    .plan-card {
-                        padding: 10px !important;
-                    }
-
-                    .price-new {
-                        font-size: 1.5rem;
-                    }
-                }
-            </style>
-
-            <div class="container text-center mb-5">
-                <h1 class="fw-bold">Find a plan that's right for you</h1>
-                <p class="text-muted">
-                    ⭐ Cancel anytime &nbsp; | &nbsp; 📞 Unlimited support &nbsp; | &nbsp; 🛠 Free guided setup
-                </p>
-            </div>
-
-            <div class="container">
-                <div class="row g-4">
-
-                    <!-- Plan 1 -->
-                    <div class="col-lg-3 col-md-6 col-sm-12">
-                        <div class="plan-card text-center h-100">
-                            <h4 class="fw-bold">Standard</h4>
-                            <div class="mb-2"><span class="price-old">BDT 30,000</span></div>
-                            <div class="price-new">BDT 10,000<span class="fs-6"> /yr</span></div>
-                            <p class="text-success small">Add setup cost BDT 20,000 (one time)</p>
-                            <a href="#"
-                                class="btn btn-success plan-btn"
-                                style="background-color:#7d4dfe; border-color:#7d4dfe; color:white;"
-                                data-bs-toggle="modal"
-                                data-bs-target="#contactModal"
-                                data-plan="Standard">Select Plan</a>
-                            <ul class="list-unstyled text-start mt-3 plan-features">
-                                <li><i class="bi bi-check-circle-fill"></i> 10<span class="text-danger">**</span> GB Storage</li>
-                                <li><i class="bi bi-check-circle-fill"></i> 100<span class="text-danger">**</span> Tenders</li>
-                                <li><i class="bi bi-check-circle-fill"></i> Instant Activation</li>
-                                <li><i class="bi bi-check-circle-fill"></i> Any Time Upgradation</li>
-                                <li><i class="bi bi-check-circle-fill"></i> 24/7 Support</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Plan 2 -->
-                    <div class="col-lg-3 col-md-6 col-sm-12">
-                        <div class="plan-card text-center h-100">
-                            <h4 class="fw-bold">Professional</h4>
-                            <div class="mb-2"><span class="price-old">BDT 35,000</span></div>
-                            <div class="price-new">BDT 15,000<span class="fs-6"> /yr</span></div>
-                            <p class="text-success small">Add setup cost BDT 20,000 (one time)</p>
-                            <a href="#"
-                                class="btn btn-success plan-btn"
-                                style="background-color:#7d4dfe; border-color:#7d4dfe; color:white;"
-                                data-bs-toggle="modal"
-                                data-bs-target="#contactModal"
-                                data-plan="Professional">Select Plan</a>
-                            <ul class="list-unstyled text-start mt-3 plan-features">
-                                <li><i class="bi bi-check-circle-fill"></i> 25<span class="text-danger">**</span> GB Storage</li>
-                                <li><i class="bi bi-check-circle-fill"></i> 250<span class="text-danger">**</span> Tenders</li>
-                                <li><i class="bi bi-check-circle-fill"></i> Instant Activation</li>
-                                <li><i class="bi bi-check-circle-fill"></i> Any Time Upgradation</li>
-                                <li><i class="bi bi-check-circle-fill"></i> 24/7 Support</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Plan 3 -->
-                    <div class="col-lg-3 col-md-6 col-sm-12">
-                        <div class="plan-card text-center h-100">
-                            <h4 class="fw-bold">Premium</h4>
-                            <div class="mb-2"><span class="price-old">BDT 45,000</span></div>
-                            <div class="price-new">BDT 25,000<span class="fs-6"> /yr</span></div>
-                            <p class="text-success small">Add setup cost BDT 20,000 (one time)</p>
-                            <a href="#"
-                                class="btn btn-success plan-btn"
-                                style="background-color:#7d4dfe; border-color:#7d4dfe; color:white;"
-                                data-bs-toggle="modal"
-                                data-bs-target="#contactModal"
-                                data-plan="Premium">Select Plan</a>
-                            <ul class="list-unstyled text-start mt-3 plan-features">
-                                <li><i class="bi bi-check-circle-fill"></i> 100<span class="text-danger">**</span> GB Storage</li>
-                                <li><i class="bi bi-check-circle-fill"></i> 500<span class="text-danger">**</span> Tenders</li>
-                                <li><i class="bi bi-check-circle-fill"></i> Instant Activation</li>
-                                <li><i class="bi bi-check-circle-fill"></i> Any Time Upgradation</li>
-                                <li><i class="bi bi-check-circle-fill"></i> 24/7 Support</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Plan 4 -->
-                    <div class="col-lg-3 col-md-6 col-sm-12">
-                        <div class="plan-card text-center h-100">
-                            <h4 class="fw-bold">Premium Plus</h4>
-                            <div class="mb-2"><span class="price-old">BDT 70,000</span></div>
-                            <div class="price-new">BDT 50,000<span class="fs-6"> /yr</span></div>
-                            <p class="text-success small">Add setup cost BDT 20,000 (one time)</p>
-                            <a href="#"
-                                class="btn plan-btn"
-                                style="background-color:#7d4dfe; border-color:#7d4dfe; color:white;"
-                                data-bs-toggle="modal"
-                                data-bs-target="#contactModal"
-                                data-plan="Premium Plus">Select Plan</a>
-                            <ul class="list-unstyled text-start mt-3 plan-features">
-                                <li><i class="bi bi-check-circle-fill"></i> 500<span class="text-danger">**</span> GB Storage</li>
-                                <li><i class="bi bi-check-circle-fill"></i> 1000<span class="text-danger">**</span> Tenders</li>
-                                <li><i class="bi bi-check-circle-fill"></i> Instant Activation</li>
-                                <li><i class="bi bi-check-circle-fill"></i> Any Time Upgradation</li>
-                                <li><i class="bi bi-check-circle-fill"></i> 24/7 Support</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <h4 style="text-align: center;"><span class="text-danger">**</span>Which one comes first<span class="text-danger">**</span></h4>
-
-                </div>
-
-            </div>
-        </section>
-
-        <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-xl modal-dialog-centered">
-                <div class="modal-content p-4">
-
-                    <!-- Modal Header -->
-                    <div class="modal-header border-0 pb-0 d-flex align-items-center justify-content-between position-relative">
-                        <h2 class="modal-title fw-bold text-primary flex-grow-1 text-center m-0" id="contactModalLabel">
-                            Buy Your Plan
-                        </h2>
-                        <span class="custom-close" data-close>&times;</span>
-                    </div>
-
-                    <style>
-                        .custom-close {
-                            cursor: pointer;
-                            font-size: 1.5rem;
-                            font-weight: bold;
-                            color: #333;
-                            padding: 0 8px;
-                            line-height: 1;
-                            transition: color 0.2s ease;
-                        }
-
-                        .custom-close:hover {
-                            color: #ff9900;
-                        }
-
-                        /* Modal padding tweaks */
-                        @media (max-width: 575.98px) {
-                            .modal-dialog {
-                                max-width: 95vw;
-                                /* almost full width on xs */
-                                margin: 1.5rem auto;
-                            }
-
-                            .modal-content {
-                                padding: 1rem !important;
-                            }
-
-                            .modal-header h2 {
-                                font-size: 1.5rem;
-                            }
-
-                            /* Stack the header elements for very small screens */
-                            .modal-header {
-                                flex-direction: row;
-                            }
-
-                            .custom-close {
-                                position: absolute;
-                                right: 1rem;
-                                top: 1rem;
-                                padding: 0;
-                            }
-                        }
-
-                        @media (max-width: 767.98px) {
-
-                            /* Adjust form input sizes */
-                            .form-control-lg,
-                            .form-select-lg {
-                                font-size: 1rem;
-                                padding: 0.5rem 0.75rem;
-                            }
-                        }
-                    </style>
-
-                    <script>
-                        document.addEventListener("DOMContentLoaded", function() {
-                            const modal = document.getElementById("contactModal");
-                            const closeBtn = modal.querySelector(".custom-close");
-
-                            closeBtn.addEventListener("click", function() {
-                                // Hide modal
-                                modal.style.display = "none";
-                                modal.classList.remove("show");
-                                document.body.classList.remove("modal-open");
-
-                                // Remove Bootstrap's black overlay
-                                const backdrop = document.querySelector('.modal-backdrop');
-                                if (backdrop) {
-                                    backdrop.remove();
-                                }
-
-                                // Allow page scrolling again
-                                document.body.style.overflow = "";
-                            });
-                        });
-                    </script>
-
-                    <!-- Modal Body -->
-                    <div class="modal-body pt-2">
-                        <form method="POST" action="<?= htmlspecialchars($_SERVER['REQUEST_URI']) ?>">
-                            <input type="hidden" name="csrf_token" value="<?= $_SESSION['token'] ?>">
-                            <input type="hidden" name="software" value="Bidtrack">
-                            <input type="hidden" name="source" value="Website">
-                            <input type="hidden" name="form_type" value="plan">
-
-                            <div class="row g-4">
-                                <!-- Full Name -->
-                                <div class="col-12 col-md-6">
-                                    <label class="form-label fw-bold">Full Name <span class="text-danger">*</span></label>
-                                    <input type="text" name="name" class="form-control form-control-lg <?= isset($errors['name']) ? 'is-invalid' : '' ?>" value="<?= htmlspecialchars($name) ?>" maxlength="100" placeholder="Write your full name" required>
-                                    <?php if (isset($errors['name'])): ?><div class="invalid-feedback"><?= $errors['name'] ?></div><?php endif; ?>
-                                </div>
-
-                                <!-- Company Name -->
-                                <div class="col-12 col-md-6">
-                                    <label class="form-label fw-bold">Company Name <span class="text-danger">*</span></label>
-                                    <input type="text" name="company_name" class="form-control form-control-lg <?= isset($errors['company_name']) ? 'is-invalid' : '' ?>" value="<?= htmlspecialchars($company_name) ?>" maxlength="100" placeholder="Write your company name" required>
-                                    <?php if (isset($errors['company_name'])): ?><div class="invalid-feedback"><?= $errors['company_name'] ?></div><?php endif; ?>
-                                </div>
-
-                                <!-- Email -->
-                                <div class="col-12 col-md-6">
-                                    <label class="form-label fw-bold">Email <span class="text-danger">*</span></label>
-                                    <input type="email" name="email" class="form-control form-control-lg <?= isset($errors['email']) ? 'is-invalid' : '' ?>" value="<?= htmlspecialchars($email) ?>" maxlength="100" placeholder="Write your email" required>
-                                    <?php if (isset($errors['email'])): ?><div class="invalid-feedback"><?= $errors['email'] ?></div><?php endif; ?>
-                                </div>
-
-                                <!-- Phone -->
-                                <div class="col-12 col-md-6">
-                                    <label class="form-label fw-bold">Phone <span class="text-danger">*</span></label>
-                                    <input type="text" name="phone" class="form-control form-control-lg <?= isset($errors['phone']) ? 'is-invalid' : '' ?>" value="<?= htmlspecialchars($phone) ?>" maxlength="20" placeholder="Write your phone number" required>
-                                    <?php if (isset($errors['phone'])): ?><div class="invalid-feedback"><?= $errors['phone'] ?></div><?php endif; ?>
-                                </div>
-
-                                <!-- Address -->
-                                <div class="col-12 col-md-6">
-                                    <label class="form-label fw-bold">Address <span class="text-danger">*</span></label>
-                                    <input type="text" name="address" class="form-control form-control-lg <?= isset($errors['address']) ? 'is-invalid' : '' ?>" value="<?= htmlspecialchars($address) ?>" maxlength="255" placeholder="Write your address" required>
-                                    <?php if (isset($errors['address'])): ?><div class="invalid-feedback"><?= $errors['address'] ?></div><?php endif; ?>
-                                </div>
-
-                                <!-- Area -->
-                                <div class="col-12 col-md-6">
-                                    <label class="form-label fw-bold">Area <span class="text-danger">*</span></label>
-                                    <input type="text" name="area" class="form-control form-control-lg <?= isset($errors['area']) ? 'is-invalid' : '' ?>" value="<?= htmlspecialchars($area) ?>" maxlength="100" placeholder="Write your area, Ex: Uttara" required>
-                                    <?php if (isset($errors['area'])): ?><div class="invalid-feedback"><?= $errors['area'] ?></div><?php endif; ?>
-                                </div>
-
-                                <!-- City -->
-                                <div class="col-12 col-md-6">
-                                    <label class="form-label fw-bold">City <span class="text-danger">*</span></label>
-                                    <input type="text" name="city" class="form-control form-control-lg <?= isset($errors['city']) ? 'is-invalid' : '' ?>" value="<?= htmlspecialchars($city) ?>" maxlength="100" placeholder="Write your city, Ex: Dhaka" required>
-                                    <?php if (isset($errors['city'])): ?><div class="invalid-feedback"><?= $errors['city'] ?></div><?php endif; ?>
-                                </div>
-
-                                <!-- Post Code -->
-                                <div class="col-12 col-md-6">
-                                    <label class="form-label fw-bold">Post Code <span class="text-danger">*</span></label>
-                                    <input type="text" name="post_code" class="form-control form-control-lg <?= isset($errors['post_code']) ? 'is-invalid' : '' ?>" value="<?= htmlspecialchars($post_code) ?>" maxlength="20" placeholder="Write your post code, Ex: 1201" required>
-                                    <?php if (isset($errors['post_code'])): ?><div class="invalid-feedback"><?= $errors['post_code'] ?></div><?php endif; ?>
-                                </div>
-
-                                <!-- Country -->
-                                <div class="col-12 col-md-6">
-                                    <label class="form-label fw-bold">Country <span class="text-danger">*</span></label>
-                                    <select name="country" class="form-select form-select-lg" required>
-                                        <option value="">Select Country</option>
-                                        <?php foreach ($countries as $c): ?>
-                                            <option value="<?= htmlspecialchars($c) ?>" <?= $c === $country ? 'selected' : '' ?>><?= htmlspecialchars($c) ?></option>
-                                        <?php endforeach; ?>
-                                    </select>
-                                </div>
-
-                                <!-- Price Plan -->
-                                <div class="col-12 col-md-6">
-                                    <label class="form-label fw-bold">Price Plan <span class="text-danger">*</span></label>
-                                    <select name="price_plan" id="pricePlanSelect" class="form-select form-select-lg" required>
-                                        <option value="">Select a Plan</option>
-                                        <option value="Standard">Standard - BDT 10,000 /yr + 20000 BDT setup cost</option>
-                                        <option value="Professional">Professional - BDT 15,000 /yr + 20000 BDT setup cost</option>
-                                        <option value="Premium">Premium - BDT 25,000 /yr + 20000 BDT setup cost</option>
-                                        <option value="Premium Plus">Premium Plus - BDT 50,000 /yr + 20000 BDT setup cost</option>
-                                    </select>
-                                    <small id="totalCostDisplay" class="form-text text-muted mt-2"></small>
-
-                                </div>
-                            </div>
-
-                            <!-- Submit Button -->
-                            <div class="text-center mt-4">
-                                <button type="submit" class="btn px-5 py-3 rounded-pill shadow-sm" style="background-color:#7d4dfe; border-color:#7d4dfe; color:white;">
-                                    Submit
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <br>
 

@@ -132,38 +132,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 // Load countries from JSON
 $countries = file_exists('countries.json') ? json_decode(file_get_contents('countries.json'), true) : [];
 
-// Default slides (optional)
-$slides = [
-    [
-        'image' => 'images/slider/slide1.jpg',
-        'title' => 'Welcome to BidTrack',
-        'subtitle' => 'Streamline Tender Management with Confidence'
-    ],
-    [
-        'image' => 'images/slider/slide2.jpg',
-        'title' => 'Manage Tender',
-        'subtitle' => 'Simplify the Entire Tender Process'
-    ],
-    [
-        'image' => 'images/slider/slide3.jpg',
-        'title' => 'Live Dashboard',
-        'subtitle' => 'Get Real-Time Insights & Track Every Activity'
-    ]
-];
 ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8" />
-    <title>BidTrack – Plans & Pricing</title>
+    <title>ProsharPOS – Plans & Pricing</title>
     <meta name="description" content="Choose the right BidTrack tender management plan for your needs. Cancel anytime, with unlimited support and free guided setup.">
     <meta name="keywords" content="bidtrack plans, pricing, tender management software, tender tracking">
     <meta name="author" content="BidTrack Team">
     <meta name="robots" content="index, follow">
 
     <!-- <link rel="canonical" href="https://www.bidtrack.xyz/plan.php" /> -->
-    <link rel="icon" type="image/png" href="https://www.bidtrack.xyz/images/icon.png">
+    <link rel="icon" type="image/png" href="images/icon.JPG">
 
     <!-- Bootstrap & Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
@@ -240,24 +222,20 @@ $slides = [
         <div
             class="top-bar d-flex justify-content-between align-items-center bg-opacity-25 border-bottom border-secondary py-2 px-3 mb-1 small text-secondary">
             <div class="d-flex gap-3">
-                <a href="mailto:bidtrack@totalofftec.com"
+                <a href="mailto:mdlabibarefin@gmail.com"
                     class="text-decoration-none text-secondary d-flex align-items-center gap-1">
-                    <i class="bi bi-envelope"></i> <span class="d-none d-sm-inline">bidtrack@totalofftec.com</span>
+                    <i class="bi bi-envelope"></i> <span class="d-none d-sm-inline">mdlabibarefin@gmail.com</span>
                 </a>
-                <a href="tel:+8809643111222"
+                <a href="tel:+8801776197999"
                     class="text-decoration-none text-secondary d-flex align-items-center gap-1">
-                    <i class="bi bi-telephone"></i> <span class="d-none d-sm-inline">+8809643111222</span>
+                    <i class="bi bi-telephone"></i> <span class="d-none d-sm-inline">+8801776197999</span>
                 </a>
-                <a href="https://totalofftec.com" target="_blank"
+                <a href="https://labib.work" target="_blank"
                     class="text-decoration-none text-secondary d-flex align-items-center gap-1">
-                    <i class="bi bi-globe2"></i> <span class="d-none d-sm-inline">totalofftec.com</span>
-                </a>
-                <a href="https://maps.app.goo.gl/JGxPSh5HZnbuUK6H7" target="_blank"
-                    class="text-decoration-none text-secondary d-flex align-items-center gap-1">
-                    <i class="bi bi-geo-alt"></i> <span class="d-none d-sm-inline">Location</span>
+                    <i class="bi bi-globe2"></i> <span class="d-none d-sm-inline">labib.work</span>
                 </a>
             </div>
-            <a href="mailto:timetrack@totalofftec.com"
+            <a href="mailto:mdlabibarefin@gmail.com"
                 class="btn btn-primary btn-sm rounded-circle d-flex align-items-center justify-content-center"
                 style="width: 36px; height: 36px;">
                 <i class="bi bi-envelope-fill"></i>
@@ -268,7 +246,7 @@ $slides = [
         <nav class="navbar navbar-expand-md navbar-light bg-white border-bottom shadow-sm mb-4 px-2">
             <div class="container-fluid px-0">
                 <a class="navbar-brand d-flex align-items-center gap-2" href="index.php">
-                    <img src="images/logo.png" alt="Logo" class="d-none d-md-block" style="width: 200px; height: 6  0px;">
+                    <img src="images/image.png" alt="Logo" class="d-none d-md-block" style="width: 200px; height: 6  0px;">
                     <!-- <span class="text-primary fw-bold fs-4">BidTrack</span> -->
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
@@ -294,26 +272,21 @@ $slides = [
 
     <section class="py-5 bg-light" id="plan">
         <style>
-            /* Section padding adjustment */
             #plan {
-                padding-top: 3rem;
-                padding-bottom: 3rem;
+                padding: 3rem 0;
             }
 
-            /* Increase side space inside container */
             #plan .container {
                 max-width: 1100px;
-                /* was default ~1140px on lg */
             }
 
-            /* Make plan cards more roomy horizontally */
             .plan-card {
-                border: 1px solid #e0e0e0;
+                background: #fff;
                 border-radius: 10px;
                 padding: 25px;
-                background: #fff;
-                box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
-                transition: transform 0.2s;
+                border: 1px solid #e0e0e0;
+                box-shadow: 0 3px 8px rgba(0, 0, 0, .05);
+                transition: transform .2s;
                 height: 100%;
             }
 
@@ -323,20 +296,18 @@ $slides = [
 
             .price-old {
                 text-decoration: line-through;
-                color: gray;
+                color: #999;
             }
 
             .price-new {
                 font-size: 2rem;
-                font-weight: bold;
+                font-weight: 700;
             }
 
             .plan-btn {
-                background-color: #198754;
-                border: none;
-                padding: 10px 0;
-                font-size: 1rem;
                 width: 100%;
+                background: #7d4dfe;
+                color: #fff;
             }
 
             .plan-features li {
@@ -346,134 +317,97 @@ $slides = [
             .plan-features i {
                 color: #7d4dfe;
             }
-
-            /* Mobile adjustments for section + cards */
-            @media (max-width: 767px) {
-                #plan {
-                    padding-top: 1.5rem;
-                    padding-bottom: 1.5rem;
-                }
-
-                .plan-card {
-                    padding: 10px !important;
-                }
-
-                .price-new {
-                    font-size: 1.5rem;
-                }
-            }
         </style>
 
         <div class="container text-center mb-5">
-            <h1 class="fw-bold">Find a plan that's right for you</h1>
+            <h1 class="fw-bold">ProsharPOS Pricing</h1>
             <p class="text-muted">
-                ⭐ Cancel anytime &nbsp; | &nbsp; 📞 Unlimited support &nbsp; | &nbsp; 🛠 Free guided setup
+                ✔ Free Demo &nbsp; | &nbsp; ✔ Upgrade Anytime &nbsp; | &nbsp; ✔ Bangladeshi Business Friendly
             </p>
         </div>
 
         <div class="container">
             <div class="row g-4">
 
-                <!-- Plan 1 -->
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                    <div class="plan-card text-center h-100">
+                <!-- Standard -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="plan-card text-center">
                         <h4 class="fw-bold">Standard</h4>
-                        <div class="mb-2"><span class="price-old">BDT 30,000</span></div>
-                        <div class="price-new">BDT 10,000<span class="fs-6"> /yr</span></div>
-                        <p class="text-success small">Add setup cost BDT 20,000 (one time)</p>
-                        <a href="#"
-                            class="btn btn-success plan-btn"
-                            style="background-color:#7d4dfe; border-color:#7d4dfe; color:white;"
-                            data-bs-toggle="modal"
-                            data-bs-target="#contactModal"
-                            data-plan="Standard">Select Plan</a>
+                        <div class="price-old">BDT 30,000</div>
+                        <div class="price-new">BDT 10,000 <span class="fs-6">/yr</span></div>
+                        <p class="text-success small">Setup cost: BDT 20,000 (one-time)</p>
+                        <a href="#" class="btn plan-btn plan-btn" data-plan="Standard">Select Plan</a>
                         <ul class="list-unstyled text-start mt-3 plan-features">
-                            <li><i class="bi bi-check-circle-fill"></i> 10<span class="text-danger">**</span> GB Storage</li>
-                            <li><i class="bi bi-check-circle-fill"></i> 100<span class="text-danger">**</span> Tenders</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Instant Activation</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Any Time Upgradation</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Cloud POS System</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Unlimited Products</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Basic Sales Reports</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Inventory Control</li>
                             <li><i class="bi bi-check-circle-fill"></i> 24/7 Support</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- Plan 2 -->
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                    <div class="plan-card text-center h-100">
+                <!-- Professional -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="plan-card text-center">
                         <h4 class="fw-bold">Professional</h4>
-                        <div class="mb-2"><span class="price-old">BDT 35,000</span></div>
-                        <div class="price-new">BDT 15,000<span class="fs-6"> /yr</span></div>
-                        <p class="text-success small">Add setup cost BDT 20,000 (one time)</p>
-                        <a href="#"
-                            class="btn btn-success plan-btn"
-                            style="background-color:#7d4dfe; border-color:#7d4dfe; color:white;"
-                            data-bs-toggle="modal"
-                            data-bs-target="#contactModal"
-                            data-plan="Professional">Select Plan</a>
+                        <div class="price-old">BDT 35,000</div>
+                        <div class="price-new">BDT 15,000 <span class="fs-6">/yr</span></div>
+                        <p class="text-success small">Setup cost: BDT 20,000</p>
+                        <a href="#" class="btn plan-btn" data-plan="Professional">Select Plan</a>
                         <ul class="list-unstyled text-start mt-3 plan-features">
-                            <li><i class="bi bi-check-circle-fill"></i> 25<span class="text-danger">**</span> GB Storage</li>
-                            <li><i class="bi bi-check-circle-fill"></i> 250<span class="text-danger">**</span> Tenders</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Instant Activation</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Any Time Upgradation</li>
-                            <li><i class="bi bi-check-circle-fill"></i> 24/7 Support</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Everything in Standard</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Advanced Reports</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Multi-user Access</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Stock Alerts</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Priority Support</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- Plan 3 -->
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                    <div class="plan-card text-center h-100">
+                <!-- Premium -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="plan-card text-center">
                         <h4 class="fw-bold">Premium</h4>
-                        <div class="mb-2"><span class="price-old">BDT 45,000</span></div>
-                        <div class="price-new">BDT 25,000<span class="fs-6"> /yr</span></div>
-                        <p class="text-success small">Add setup cost BDT 20,000 (one time)</p>
-                        <a href="#"
-                            class="btn btn-success plan-btn"
-                            style="background-color:#7d4dfe; border-color:#7d4dfe; color:white;"
-                            data-bs-toggle="modal"
-                            data-bs-target="#contactModal"
-                            data-plan="Premium">Select Plan</a>
+                        <div class="price-old">BDT 45,000</div>
+                        <div class="price-new">BDT 25,000 <span class="fs-6">/yr</span></div>
+                        <p class="text-success small">Setup cost: BDT 20,000</p>
+                        <a href="#" class="btn plan-btn" data-plan="Premium">Select Plan</a>
                         <ul class="list-unstyled text-start mt-3 plan-features">
-                            <li><i class="bi bi-check-circle-fill"></i> 100<span class="text-danger">**</span> GB Storage</li>
-                            <li><i class="bi bi-check-circle-fill"></i> 500<span class="text-danger">**</span> Tenders</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Instant Activation</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Any Time Upgradation</li>
-                            <li><i class="bi bi-check-circle-fill"></i> 24/7 Support</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Multi-Outlet Support</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Profit Analysis</li>
+                            <li><i class="bi bi-check-circle-fill"></i> VAT Reports</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Employee Management</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Priority Support</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- Plan 4 -->
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                    <div class="plan-card text-center h-100">
+                <!-- Premium Plus -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="plan-card text-center">
                         <h4 class="fw-bold">Premium Plus</h4>
-                        <div class="mb-2"><span class="price-old">BDT 70,000</span></div>
-                        <div class="price-new">BDT 50,000<span class="fs-6"> /yr</span></div>
-                        <p class="text-success small">Add setup cost BDT 20,000 (one time)</p>
-                        <a href="#"
-                            class="btn plan-btn"
-                            style="background-color:#7d4dfe; border-color:#7d4dfe; color:white;"
-                            data-bs-toggle="modal"
-                            data-bs-target="#contactModal"
-                            data-plan="Premium Plus">Select Plan</a>
+                        <div class="price-old">BDT 70,000</div>
+                        <div class="price-new">BDT 50,000 <span class="fs-6">/yr</span></div>
+                        <p class="text-success small">Setup cost: BDT 20,000</p>
+                        <a href="#" class="btn plan-btn" data-plan="Premium Plus">Select Plan</a>
                         <ul class="list-unstyled text-start mt-3 plan-features">
-                            <li><i class="bi bi-check-circle-fill"></i> 500<span class="text-danger">**</span> GB Storage</li>
-                            <li><i class="bi bi-check-circle-fill"></i> 1000<span class="text-danger">**</span> Tenders</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Instant Activation</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Any Time Upgradation</li>
-                            <li><i class="bi bi-check-circle-fill"></i> 24/7 Support</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Unlimited Branches</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Custom Features</li>
+                            <li><i class="bi bi-check-circle-fill"></i> API Integration</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Dedicated Manager</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Highest Priority Support</li>
                         </ul>
                     </div>
                 </div>
-                <h4 style="text-align: center;"><span class="text-danger">**</span>Which one comes first<span class="text-danger">**</span></h4>
 
             </div>
-
         </div>
     </section>
 
     <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+
             <div class="modal-content p-4">
 
                 <!-- Modal Header -->
@@ -700,131 +634,97 @@ $slides = [
 
     </div>
 
-    <footer class="text-center text-muted small py-3 border-top">
-        <style>
-            @font-face {
-                font-family: 'OnStage';
-                src: url('fonts/OnStage_Regular.ttf') format('truetype');
-                font-weight: normal;
-                font-style: normal;
-            }
-
-            .onstage-text {
-                font-family: 'OnStage', sans-serif;
-                color: #ff9900;
-            }
-
-            .off-highlight {
-                color: #B2BEB5;
-            }
-        </style>
+    <footer class="text-center text-muted small py-1 border-top">
         &copy;
-        <a href="https://bidtrack.xyz" target="_blank"
+        <a href="#"
             class="text-decoration-none text-primary fw-semibold"
             rel="noopener noreferrer">
-            BidTrack.
+            ProsharPOS.
         </a> All rights reserved
         | Design and Developed by
-        <a href="https://totalofftec.com" target="_blank" rel="noopener noreferrer"
+        <a href="https://labib.work" target="_blank" rel="noopener noreferrer"
             class="text-decoration-none text-primary fw-semibold d-inline-block">
             <span class="onstage-text">
-                total<span class="off-highlight">offtec</span>
+                Labib Arefin
             </span>
         </a>
     </footer>
+
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            const contactModalEl = document.getElementById("contactModal");
-            if (!contactModalEl) return;
 
-            const modalContent = contactModalEl.querySelector(".modal-content");
+            const modal = document.getElementById("contactModal");
+            const modalContent = modal.querySelector(".modal-content");
             const planSelect = document.getElementById("pricePlanSelect");
             const totalCostDisplay = document.getElementById("totalCostDisplay");
 
-            const setupCost = 20000; // fixed setup cost BDT 20,000
+            const SETUP_COST = 20000;
 
-            // Plan prices mapping
-            const planPrices = {
+            const PLAN_PRICES = {
                 "Standard": 10000,
                 "Professional": 15000,
                 "Premium": 25000,
                 "Premium Plus": 50000
             };
 
-            function formatTotalCost(amount) {
-                return amount.toLocaleString('en-US');
+            function formatBDT(amount) {
+                return "BDT " + amount.toLocaleString("en-BD");
             }
 
-            // Update total cost display with blue strong text and exact output format
             function updateTotalCost() {
-                if (!totalCostDisplay) return;
-                const selectedPlan = planSelect.value;
-                if (selectedPlan && planPrices[selectedPlan] !== undefined) {
-                    const total = planPrices[selectedPlan] + setupCost;
-                    totalCostDisplay.innerHTML = `<strong style="color: #0d6efd;">[Total cost = ${formatTotalCost(total)} Tk]</strong>`;
-                } else {
-                    totalCostDisplay.textContent = "-- Tk";
+                const plan = planSelect.value;
+                if (!PLAN_PRICES[plan]) {
+                    totalCostDisplay.textContent = "";
+                    return;
                 }
+                const total = PLAN_PRICES[plan] + SETUP_COST;
+                totalCostDisplay.innerHTML = `
+            <strong style="color:#0d6efd;">
+                Total Cost: ${formatBDT(total)} (Including setup)
+            </strong>
+        `;
             }
 
-            // Show modal function
-            function showModal() {
-                contactModalEl.classList.add("show");
-                contactModalEl.style.display = "block";
-                document.body.classList.add("modal-open");
+            function openModal(planName) {
+                planSelect.value = planName;
                 updateTotalCost();
+                modal.classList.add("show");
+                modal.style.display = "block";
+                document.body.classList.add("modal-open");
             }
 
-            // Hide modal function
-            function hideModal() {
-                contactModalEl.classList.remove("show");
-                contactModalEl.style.display = "none";
+            function closeModal() {
+                modal.classList.remove("show");
+                modal.style.display = "none";
                 document.body.classList.remove("modal-open");
-                if (totalCostDisplay) totalCostDisplay.textContent = "-- Tk";
+                const backdrop = document.querySelector(".modal-backdrop");
+                if (backdrop) backdrop.remove();
             }
 
-            // Close modal on clicking outside modal-content of contactModal only
-            contactModalEl.addEventListener("click", function(e) {
-                if (!modalContent.contains(e.target)) {
-                    hideModal();
-                }
-            });
-
-            // Open modal when plan button clicked
-            const planButtons = document.querySelectorAll(".plan-btn");
-            planButtons.forEach(btn => {
-                btn.addEventListener("click", function(e) {
+            document.querySelectorAll(".plan-btn").forEach(btn => {
+                btn.addEventListener("click", e => {
                     e.preventDefault();
-                    const selectedPlan = this.dataset.plan || this.getAttribute("data-plan") || "";
-                    if (planSelect) {
-                        planSelect.value = selectedPlan;
-                        updateTotalCost();
-                    }
-                    showModal();
-
-                    setTimeout(() => {
-                        const firstInput = contactModalEl.querySelector('input[name="name"], select, textarea');
-                        if (firstInput) firstInput.focus();
-                    }, 120);
+                    openModal(btn.dataset.plan);
                 });
             });
 
-            // Update total cost on price plan select change
-            if (planSelect) {
-                planSelect.addEventListener("change", updateTotalCost);
-            }
+            modal.addEventListener("click", e => {
+                if (!modalContent.contains(e.target)) closeModal();
+            });
 
-            // Close on ESC key
-            document.addEventListener("keydown", function(e) {
-                if (e.key === "Escape") {
-                    hideModal();
-                }
+            document.querySelector(".custom-close").addEventListener("click", closeModal);
+
+            planSelect.addEventListener("change", updateTotalCost);
+
+            document.addEventListener("keydown", e => {
+                if (e.key === "Escape") closeModal();
             });
         });
     </script>
+
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const navbarLinks = document.querySelectorAll('.navbar-nav .nav-link');
