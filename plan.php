@@ -632,7 +632,7 @@ $countries = file_exists('countries.json') ? json_decode(file_get_contents('coun
         </div>
     </div>
 
-    </div>
+
 
     <footer class="text-center text-muted small py-1 border-top">
         &copy;

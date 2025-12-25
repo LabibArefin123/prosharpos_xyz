@@ -191,7 +191,7 @@ $countries = file_exists('countries.json') ? json_decode(file_get_contents('coun
     <!-- Bootstrap & Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="./style.css">
 
@@ -649,6 +649,226 @@ $countries = file_exists('countries.json') ? json_decode(file_get_contents('coun
 
         <br>
 
+        <section id="news" class="py-5 bg-light">
+            <style>
+                #news .news-card {
+                    border: 1px solid #eee;
+                    border-radius: 12px;
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    transition: transform 0.3s;
+                }
+
+                #news .news-card:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+                }
+
+                #news .card-body {
+                    padding: 1rem;
+                }
+
+                #news .card-title {
+                    font-size: 1rem;
+                    font-weight: 600;
+                    line-height: 1.3;
+                }
+
+                #news .card-text {
+                    font-size: 0.85rem;
+                    color: #555;
+                    min-height: 2.2rem;
+                    /* ensures same height for multiple lines */
+                }
+
+                #news small {
+                    color: #999;
+                }
+
+                .news-prev,
+                .news-next {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    z-index: 10;
+                    width: 46px;
+                    height: 46px;
+                    background: #ffffff;
+                    border-radius: 50%;
+                    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                    transition: all 0.25s ease;
+                }
+
+                .news-prev {
+                    left: -24px;
+                }
+
+                .news-next {
+                    right: -24px;
+                }
+
+                .news-prev:hover,
+                .news-next:hover {
+                    background: #7d4dfe;
+                    transform: translateY(-50%) scale(1.08);
+                }
+
+                .news-prev i,
+                .news-next i {
+                    font-size: 22px;
+                    color: #333;
+                    transition: color 0.25s ease;
+                }
+
+                .news-prev:hover i,
+                .news-next:hover i {
+                    color: #fff;
+                }
+
+                /* Mobile friendly */
+                @media (max-width: 991px) {
+                    .news-prev {
+                        left: -12px;
+                    }
+
+                    .news-next {
+                        right: -12px;
+                    }
+                }
+
+                .swiper-pagination {
+                    text-align: center;
+                    margin-top: 20px;
+                }
+
+                .swiper-pagination-bullet {
+                    background: #7d4dfe;
+                    opacity: 0.4;
+                }
+
+                .swiper-pagination-bullet-active {
+                    opacity: 1;
+                }
+
+                @media (max-width: 991px) {
+                    .news-prev {
+                        left: -10px;
+                    }
+
+                    .news-next {
+                        right: -10px;
+                    }
+                }
+            </style>
+            <div class="container">
+                <div class="text-center mb-4">
+                    <h2 class="fw-bold">Latest News</h2>
+                    <p class="text-muted">Point of Sale Latest News</p>
+                </div>
+
+                <!-- Slider Wrapper (for arrows positioning) -->
+                <div class="news-slider-wrapper position-relative">
+
+                    <!-- LEFT ARROW (OUTSIDE SLIDER) -->
+                    <div class="news-prev">
+                        <i class="bi bi-chevron-left"></i>
+                    </div>
+
+                    <!-- SWIPER -->
+                    <div class="swiper newsSwiper">
+                        <div class="swiper-wrapper">
+
+                            <!-- Slide 1 -->
+                            <div class="swiper-slide">
+                                <div class="card news-card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">New POS Update Released</h5>
+                                        <p class="card-text">Improved invoice speed and stock performance.</p>
+                                        <small>Sep 2025</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Slide 2 -->
+                            <div class="swiper-slide">
+                                <div class="card news-card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">VAT Report Enhancement</h5>
+                                        <p class="card-text">Accurate VAT calculation for Bangladesh.</p>
+                                        <small>Sep 2025</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Slide 3 -->
+                            <div class="swiper-slide">
+                                <div class="card news-card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Multi-Branch Feature</h5>
+                                        <p class="card-text">Manage all branches from one dashboard.</p>
+                                        <small>Aug 2025</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Slide 4 -->
+                            <div class="swiper-slide">
+                                <div class="card news-card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Security Update</h5>
+                                        <p class="card-text">Improved role & permission controls.</p>
+                                        <small>Aug 2025</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Slide 5 -->
+                            <div class="swiper-slide">
+                                <div class="card news-card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Mobile POS Support</h5>
+                                        <p class="card-text">Use POS from tablet & mobile devices.</p>
+                                        <small>Jul 2025</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Slide 6 -->
+                            <div class="swiper-slide">
+                                <div class="card news-card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Backup Automation</h5>
+                                        <p class="card-text">Daily cloud backup enabled.</p>
+                                        <small>Jul 2025</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- RIGHT ARROW (OUTSIDE SLIDER) -->
+                    <div class="news-next">
+                        <i class="bi bi-chevron-right"></i>
+                    </div>
+
+                </div>
+
+                <!-- Pagination (outside slider) -->
+                <div class="swiper-pagination mt-3"></div>
+            </div>
+
+        </section>
+
+        <br>
+
         <section id="contact">
             <h2>Get in Touch</h2>
 
@@ -768,109 +988,63 @@ $countries = file_exists('countries.json') ? json_decode(file_get_contents('coun
             </a>
         </footer>
 
-    </div>
+        <!-- Bootstrap JS Bundle (Popper + Bootstrap JS) -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Bootstrap JS Bundle (Popper + Bootstrap JS) -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const contactModalEl = document.getElementById("contactModal");
-            if (!contactModalEl) return;
+        <!-- Swiper start js -->
+        <script>
+            new Swiper(".newsSwiper", {
+                slidesPerView: 4,
+                slidesPerGroup: 1,
+                spaceBetween: 20,
 
-            const modalContent = contactModalEl.querySelector(".modal-content");
-            const planSelect = document.getElementById("pricePlanSelect");
-            const totalCostDisplay = document.getElementById("totalCostDisplay");
+                loop: true,
+                loopedSlides: 6,
+                loopAdditionalSlides: 6,
 
-            const setupCost = 20000; // fixed setup cost BDT 20,000
+                autoplay: {
+                    delay: 10000, // ✅ 10 seconds
+                    disableOnInteraction: false,
+                    pauseOnMouseEnter: true
+                },
 
-            // Plan prices mapping
-            const planPrices = {
-                "Standard": 10000,
-                "Professional": 15000,
-                "Premium": 25000,
-                "Premium Plus": 50000
-            };
+                speed: 900, // ✅ smooth slide speed
+                grabCursor: true,
 
-            function formatTotalCost(amount) {
-                return amount.toLocaleString('en-US');
-            }
+                navigation: {
+                    nextEl: ".news-next",
+                    prevEl: ".news-prev"
+                },
 
-            // Update total cost display with blue strong text and exact output format
-            function updateTotalCost() {
-                if (!totalCostDisplay) return;
-                const selectedPlan = planSelect.value;
-                if (selectedPlan && planPrices[selectedPlan] !== undefined) {
-                    const total = planPrices[selectedPlan] + setupCost;
-                    totalCostDisplay.innerHTML = `<strong style="color: #0d6efd;">[Total cost = ${formatTotalCost(total)} Tk]</strong>`;
-                } else {
-                    totalCostDisplay.textContent = "-- Tk";
-                }
-            }
-
-            // Show modal function
-            function showModal() {
-                contactModalEl.classList.add("show");
-                contactModalEl.style.display = "block";
-                document.body.classList.add("modal-open");
-                updateTotalCost();
-            }
-
-            // Hide modal function
-            function hideModal() {
-                contactModalEl.classList.remove("show");
-                contactModalEl.style.display = "none";
-                document.body.classList.remove("modal-open");
-                if (totalCostDisplay) totalCostDisplay.textContent = "-- Tk";
-            }
-
-            // Close modal on clicking outside modal-content of contactModal only
-            contactModalEl.addEventListener("click", function(e) {
-                if (!modalContent.contains(e.target)) {
-                    hideModal();
-                }
-            });
-
-            // Open modal when plan button clicked
-            const planButtons = document.querySelectorAll(".plan-btn");
-            planButtons.forEach(btn => {
-                btn.addEventListener("click", function(e) {
-                    e.preventDefault();
-                    const selectedPlan = this.dataset.plan || this.getAttribute("data-plan") || "";
-                    if (planSelect) {
-                        planSelect.value = selectedPlan;
-                        updateTotalCost();
+                breakpoints: {
+                    0: {
+                        slidesPerView: 1
+                    },
+                    576: {
+                        slidesPerView: 2
+                    },
+                    768: {
+                        slidesPerView: 3
+                    },
+                    992: {
+                        slidesPerView: 4
                     }
-                    showModal();
-
-                    setTimeout(() => {
-                        const firstInput = contactModalEl.querySelector('input[name="name"], select, textarea');
-                        if (firstInput) firstInput.focus();
-                    }, 120);
-                });
-            });
-
-            // Update total cost on price plan select change
-            if (planSelect) {
-                planSelect.addEventListener("change", updateTotalCost);
-            }
-
-            // Close on ESC key
-            document.addEventListener("keydown", function(e) {
-                if (e.key === "Escape") {
-                    hideModal();
                 }
             });
-        });
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        </script>
+        <!-- Swiper end js -->
+
+
 </body>
 
 <?php if (!empty($success)): ?>
-    <script>
+    <!-- <script>
         // Open Laravel login page in a new tab with pre-filled login values
         // window.open("http://192.168.2.47:8000/login?autologin=no&u=admin&p=AAaa00@@", "_blank");
         window.open("https://bidtrack.kazionline.com/login?autologin=no&u=admin&p=AAaa00@@", "_blank");
-    </script>
+    </script> -->
 <?php endif; ?>
 
 </html>
