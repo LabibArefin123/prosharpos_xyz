@@ -335,7 +335,7 @@ $countries = file_exists('countries.json') ? json_decode(file_get_contents('coun
                         <h4 class="fw-bold">Standard</h4>
                         <div class="price-old">BDT 30,000</div>
                         <div class="price-new">BDT 10,000 <span class="fs-6">/yr</span></div>
-                        <p class="text-success small">Setup cost: BDT 20,000 (one-time)</p>
+                        <p class="text-success small">Setup cost: BDT 20,000</p>
                         <a href="#" class="btn plan-btn plan-btn" data-plan="Standard">Select Plan</a>
                         <ul class="list-unstyled text-start mt-3 plan-features">
                             <li><i class="bi bi-check-circle-fill"></i> Cloud POS System</li>
