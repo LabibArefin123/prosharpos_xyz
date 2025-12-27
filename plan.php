@@ -270,6 +270,137 @@ $countries = file_exists('countries.json') ? json_decode(file_get_contents('coun
         </nav>
     </section>
 
+    <section class="py-5 bg-white" id="plan-compare">
+        <style>
+            #plan-compare table th,
+            #plan-compare table td {
+                vertical-align: middle;
+                text-align: center;
+                padding: 14px;
+            }
+
+            #plan-compare thead th {
+                background: #7d4dfe;
+                color: #fff;
+                border: none;
+            }
+
+            #plan-compare tbody tr:hover {
+                background: #f8f9ff;
+            }
+
+            .compare-feature {
+                text-align: left !important;
+                font-weight: 500;
+            }
+
+            .icon-yes {
+                color: #28a745;
+                font-size: 1.2rem;
+            }
+
+            .icon-no {
+                color: #dc3545;
+                font-size: 1.2rem;
+            }
+        </style>
+
+        <div class="container" style="max-width: 1100px;">
+            <div class="text-center mb-4">
+                <h2 class="fw-bold">Compare Plans</h2>
+                <p class="text-muted">
+                    Choose the best ProsharPOS plan for your business
+                </p>
+            </div>
+
+            <div class="table-responsive shadow-sm rounded">
+                <table class="table table-bordered mb-0">
+                    <thead>
+                        <tr>
+                            <th>Features</th>
+                            <th>Standard</th>
+                            <th>Professional</th>
+                            <th>Premium</th>
+                            <th>Premium Plus</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="compare-feature">Cloud POS System</td>
+                            <td><i class="bi bi-check-circle-fill icon-yes"></i></td>
+                            <td><i class="bi bi-check-circle-fill icon-yes"></i></td>
+                            <td><i class="bi bi-check-circle-fill icon-yes"></i></td>
+                            <td><i class="bi bi-check-circle-fill icon-yes"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="compare-feature">Unlimited Products</td>
+                            <td><i class="bi bi-check-circle-fill icon-yes"></i></td>
+                            <td><i class="bi bi-check-circle-fill icon-yes"></i></td>
+                            <td><i class="bi bi-check-circle-fill icon-yes"></i></td>
+                            <td><i class="bi bi-check-circle-fill icon-yes"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="compare-feature">Advanced Sales Reports</td>
+                            <td><i class="bi bi-x-circle-fill icon-no"></i></td>
+                            <td><i class="bi bi-check-circle-fill icon-yes"></i></td>
+                            <td><i class="bi bi-check-circle-fill icon-yes"></i></td>
+                            <td><i class="bi bi-check-circle-fill icon-yes"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="compare-feature">Multi-user Access</td>
+                            <td><i class="bi bi-x-circle-fill icon-no"></i></td>
+                            <td><i class="bi bi-check-circle-fill icon-yes"></i></td>
+                            <td><i class="bi bi-check-circle-fill icon-yes"></i></td>
+                            <td><i class="bi bi-check-circle-fill icon-yes"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="compare-feature">Multi-Outlet / Branch Support</td>
+                            <td><i class="bi bi-x-circle-fill icon-no"></i></td>
+                            <td><i class="bi bi-x-circle-fill icon-no"></i></td>
+                            <td><i class="bi bi-check-circle-fill icon-yes"></i></td>
+                            <td><i class="bi bi-check-circle-fill icon-yes"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="compare-feature">VAT Reports (Bangladesh)</td>
+                            <td><i class="bi bi-x-circle-fill icon-no"></i></td>
+                            <td><i class="bi bi-x-circle-fill icon-no"></i></td>
+                            <td><i class="bi bi-check-circle-fill icon-yes"></i></td>
+                            <td><i class="bi bi-check-circle-fill icon-yes"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="compare-feature">Employee Management</td>
+                            <td><i class="bi bi-x-circle-fill icon-no"></i></td>
+                            <td><i class="bi bi-x-circle-fill icon-no"></i></td>
+                            <td><i class="bi bi-check-circle-fill icon-yes"></i></td>
+                            <td><i class="bi bi-check-circle-fill icon-yes"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="compare-feature">API Integration</td>
+                            <td><i class="bi bi-x-circle-fill icon-no"></i></td>
+                            <td><i class="bi bi-x-circle-fill icon-no"></i></td>
+                            <td><i class="bi bi-x-circle-fill icon-no"></i></td>
+                            <td><i class="bi bi-check-circle-fill icon-yes"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="compare-feature">Dedicated Account Manager</td>
+                            <td><i class="bi bi-x-circle-fill icon-no"></i></td>
+                            <td><i class="bi bi-x-circle-fill icon-no"></i></td>
+                            <td><i class="bi bi-x-circle-fill icon-no"></i></td>
+                            <td><i class="bi bi-check-circle-fill icon-yes"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="compare-feature">24/7 Support</td>
+                            <td><i class="bi bi-check-circle-fill icon-yes"></i></td>
+                            <td><i class="bi bi-check-circle-fill icon-yes"></i></td>
+                            <td><i class="bi bi-check-circle-fill icon-yes"></i></td>
+                            <td><i class="bi bi-check-circle-fill icon-yes"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
     <section class="py-5 bg-light" id="plan">
         <style>
             #plan {
@@ -632,6 +763,123 @@ $countries = file_exists('countries.json') ? json_decode(file_get_contents('coun
         </div>
     </div>
 
+    <section class="py-5 bg-light" id="faq">
+        <div class="container" style="max-width: 900px;">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Frequently Asked Questions</h2>
+                <p class="text-muted">
+                    Common questions about ProsharPOS pricing & services
+                </p>
+            </div>
+
+            <div class="accordion" id="faqAccordion">
+
+                <!-- FAQ 1 -->
+                <div class="accordion-item mb-3">
+                    <h2 class="accordion-header" id="faqOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="true">
+                            Is there any free demo available?
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes ✅ We provide a <strong>free demo</strong> so you can test ProsharPOS
+                            before purchasing. Our team will guide you through all features.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="accordion-item mb-3">
+                    <h2 class="accordion-header" id="faqTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo">
+                            Is this software suitable for Bangladeshi businesses?
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Absolutely 🇧🇩 ProsharPOS is built for Bangladeshi businesses and supports
+                            VAT, Bangladeshi currency (BDT), and local business workflows.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="accordion-item mb-3">
+                    <h2 class="accordion-header" id="faqThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree">
+                            Are there any hidden charges?
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            No ❌ There are <strong>no hidden charges</strong>.
+                            You only pay the mentioned setup cost and yearly plan fee.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="accordion-item mb-3">
+                    <h2 class="accordion-header" id="faqFour">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseFour">
+                            Can I upgrade my plan later?
+                        </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes 🔄 You can upgrade your plan at any time as your business grows.
+                            Our team will assist you with a smooth upgrade.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div class="accordion-item mb-3">
+                    <h2 class="accordion-header" id="faqFive">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseFive">
+                            Do you provide training and support?
+                        </button>
+                    </h2>
+                    <div id="collapseFive" class="accordion-collapse collapse"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes 🎓 We provide <strong>full training</strong> and
+                            <strong>24/7 support</strong> to ensure smooth business operations.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 6 -->
+                <div class="accordion-item mb-3">
+                    <h2 class="accordion-header" id="faqSix">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseSix">
+                            What payment methods do you accept?
+                        </button>
+                    </h2>
+                    <div id="collapseSix" class="accordion-collapse collapse"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            We accept <strong>bKash, Nagad, Bank Transfer</strong>,
+                            and other convenient payment methods in Bangladesh.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <section class="py-5 bg-white text-center">
         <h2 class="fw-bold mb-3">Ready to Get ProsharPOS?</h2>
         <p class="text-muted mb-4">
@@ -640,7 +888,6 @@ $countries = file_exists('countries.json') ? json_decode(file_get_contents('coun
         <a href="#contact" class="btn btn-lg btn-primary px-5 me-2">Request Free Demo</a>
         <a href="tel:+8801776197999" class="btn btn-lg btn-outline-dark px-5">Call Now</a>
     </section>
-
 
     <footer class="text-center text-muted small py-1 border-top">
         &copy;
