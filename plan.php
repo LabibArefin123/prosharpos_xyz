@@ -632,6 +632,14 @@ $countries = file_exists('countries.json') ? json_decode(file_get_contents('coun
         </div>
     </div>
 
+    <section class="py-5 bg-white text-center">
+        <h2 class="fw-bold mb-3">Ready to Get ProsharPOS?</h2>
+        <p class="text-muted mb-4">
+            Talk to our expert, get a free demo, and start growing your business today.
+        </p>
+        <a href="#contact" class="btn btn-lg btn-primary px-5 me-2">Request Free Demo</a>
+        <a href="tel:+8801776197999" class="btn btn-lg btn-outline-dark px-5">Call Now</a>
+    </section>
 
 
     <footer class="text-center text-muted small py-1 border-top">
