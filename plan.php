@@ -283,6 +283,7 @@ $countries = file_exists('countries.json') ? json_decode(file_get_contents('coun
                 background: #7d4dfe;
                 color: #fff;
                 border: none;
+                font-size: 0.95rem;
             }
 
             #plan-compare tbody tr:hover {
@@ -303,6 +304,15 @@ $countries = file_exists('countries.json') ? json_decode(file_get_contents('coun
                 color: #dc3545;
                 font-size: 1.2rem;
             }
+
+            .free-badge {
+                background: #198754;
+                color: #fff;
+                font-size: 0.7rem;
+                padding: 3px 8px;
+                border-radius: 20px;
+                margin-left: 5px;
+            }
         </style>
 
         <div class="container" style="max-width: 1100px;">
@@ -318,6 +328,10 @@ $countries = file_exists('countries.json') ? json_decode(file_get_contents('coun
                     <thead>
                         <tr>
                             <th>Features</th>
+                            <th>
+                                Free
+                                <span class="free-badge">Demo</span>
+                            </th>
                             <th>Standard</th>
                             <th>Professional</th>
                             <th>Premium</th>
@@ -331,65 +345,84 @@ $countries = file_exists('countries.json') ? json_decode(file_get_contents('coun
                             <td><i class="bi bi-check-circle-fill icon-yes"></i></td>
                             <td><i class="bi bi-check-circle-fill icon-yes"></i></td>
                             <td><i class="bi bi-check-circle-fill icon-yes"></i></td>
+                            <td><i class="bi bi-check-circle-fill icon-yes"></i></td>
                         </tr>
+
                         <tr>
-                            <td class="compare-feature">Unlimited Products</td>
+                            <td class="compare-feature">Product Limit</td>
+                            <td>Up to 50</td>
+                            <td>Unlimited</td>
+                            <td>Unlimited</td>
+                            <td>Unlimited</td>
+                            <td>Unlimited</td>
+                        </tr>
+
+                        <tr>
+                            <td class="compare-feature">Basic Sales Reports</td>
+                            <td><i class="bi bi-check-circle-fill icon-yes"></i></td>
                             <td><i class="bi bi-check-circle-fill icon-yes"></i></td>
                             <td><i class="bi bi-check-circle-fill icon-yes"></i></td>
                             <td><i class="bi bi-check-circle-fill icon-yes"></i></td>
                             <td><i class="bi bi-check-circle-fill icon-yes"></i></td>
                         </tr>
+
                         <tr>
                             <td class="compare-feature">Advanced Sales Reports</td>
                             <td><i class="bi bi-x-circle-fill icon-no"></i></td>
-                            <td><i class="bi bi-check-circle-fill icon-yes"></i></td>
-                            <td><i class="bi bi-check-circle-fill icon-yes"></i></td>
-                            <td><i class="bi bi-check-circle-fill icon-yes"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="compare-feature">Multi-user Access</td>
                             <td><i class="bi bi-x-circle-fill icon-no"></i></td>
                             <td><i class="bi bi-check-circle-fill icon-yes"></i></td>
                             <td><i class="bi bi-check-circle-fill icon-yes"></i></td>
                             <td><i class="bi bi-check-circle-fill icon-yes"></i></td>
                         </tr>
+
+                        <tr>
+                            <td class="compare-feature">Multi-user Access</td>
+                            <td>1 User</td>
+                            <td>2 Users</td>
+                            <td>5 Users</td>
+                            <td>10 Users</td>
+                            <td>Unlimited</td>
+                        </tr>
+
                         <tr>
                             <td class="compare-feature">Multi-Outlet / Branch Support</td>
                             <td><i class="bi bi-x-circle-fill icon-no"></i></td>
                             <td><i class="bi bi-x-circle-fill icon-no"></i></td>
+                            <td><i class="bi bi-x-circle-fill icon-no"></i></td>
                             <td><i class="bi bi-check-circle-fill icon-yes"></i></td>
                             <td><i class="bi bi-check-circle-fill icon-yes"></i></td>
                         </tr>
+
                         <tr>
                             <td class="compare-feature">VAT Reports (Bangladesh)</td>
                             <td><i class="bi bi-x-circle-fill icon-no"></i></td>
                             <td><i class="bi bi-x-circle-fill icon-no"></i></td>
+                            <td><i class="bi bi-x-circle-fill icon-no"></i></td>
                             <td><i class="bi bi-check-circle-fill icon-yes"></i></td>
                             <td><i class="bi bi-check-circle-fill icon-yes"></i></td>
                         </tr>
+
                         <tr>
                             <td class="compare-feature">Employee Management</td>
                             <td><i class="bi bi-x-circle-fill icon-no"></i></td>
                             <td><i class="bi bi-x-circle-fill icon-no"></i></td>
+                            <td><i class="bi bi-x-circle-fill icon-no"></i></td>
                             <td><i class="bi bi-check-circle-fill icon-yes"></i></td>
                             <td><i class="bi bi-check-circle-fill icon-yes"></i></td>
                         </tr>
+
                         <tr>
                             <td class="compare-feature">API Integration</td>
                             <td><i class="bi bi-x-circle-fill icon-no"></i></td>
                             <td><i class="bi bi-x-circle-fill icon-no"></i></td>
                             <td><i class="bi bi-x-circle-fill icon-no"></i></td>
-                            <td><i class="bi bi-check-circle-fill icon-yes"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="compare-feature">Dedicated Account Manager</td>
-                            <td><i class="bi bi-x-circle-fill icon-no"></i></td>
-                            <td><i class="bi bi-x-circle-fill icon-no"></i></td>
                             <td><i class="bi bi-x-circle-fill icon-no"></i></td>
                             <td><i class="bi bi-check-circle-fill icon-yes"></i></td>
                         </tr>
+
                         <tr>
                             <td class="compare-feature">24/7 Support</td>
+                            <td>Email Only</td>
                             <td><i class="bi bi-check-circle-fill icon-yes"></i></td>
                             <td><i class="bi bi-check-circle-fill icon-yes"></i></td>
                             <td><i class="bi bi-check-circle-fill icon-yes"></i></td>
@@ -398,8 +431,13 @@ $countries = file_exists('countries.json') ? json_decode(file_get_contents('coun
                     </tbody>
                 </table>
             </div>
+
+            <p class="text-center text-muted mt-3">
+                Start with <strong>Free Demo</strong> → Upgrade anytime as your business grows.
+            </p>
         </div>
     </section>
+
 
     <section class="py-5 bg-light" id="plan">
         <style>
